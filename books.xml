@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books
+	[
+		<!ELEMENT books (book)*>
+		<!ELEMENT book (title, author+, publisher)>
+		<!ELEMENT title (#PCDATA)>
+		<!ELEMENT author (contactInfo?)>    
+		<!ELEMENT publisher (#PCDATA)>
+		<!ELEMENT contactInfo ((email, phone)|(email)|(phone))>
+		<!ELEMENT email (#PCDATA)>
+		<!ELEMENT phone (#PCDATA)>
+
+		<!ATTLIST author name CDATA #REQUIRED>
+		<!ATTLIST contactInfo person CDATA #REQUIRED>
+
+	]
+>
+
+<books>
+	<book>
+		<title>XML Language Mechanics</title>
+		<author name="Dwight Peltzer">
+			<contactInfo person="MWP">
+				<email>dpeltzer@hotmail.com></email>
+				<phone>516-922-3460</phone>
+			</contactInfo>
+		</author>
+		<publisher>Addison Wesley</publisher>
+	</book>
+	<book>
+		<title>The Human Interface</title>
+		<author name="Steven Heim">
+			<contactInfo person="MH">
+				<email>sheim@hotmail.com</email>
+				<phone>516-843-4567</phone>
+			</contactInfo>
+		</author>
+		<publisher>Addison Wesley</publisher>
+	</book>
+	<book>
+		<title>CyberCrime</title>
+		<author name="Chris Malinowski">
+			<contactInfo person="LIU">
+					<email>cmalinow@</email>
+					<phone>718-345-8765</phone>
+			</contactInfo>
+		</author>
+		<publisher>Prentice Hall</publisher>
+	</book>
+</books>

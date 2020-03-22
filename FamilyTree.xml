@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!DOCTYPE FamilyTree
+	[
+		<!ELEMENT FamilyTree (Member)*>
+		<!ELEMENT Member (#PCDATA)>
+		
+		<!ATTLIST Member MNumber ID #REQUIRED>
+		<!ATTLIST Member Parent IDREFS #IMPLIED>
+		<!ATTLIST Member Mother IDREF #IMPLIED>
+		<!ATTLIST Member Father IDREF #IMPLIED>
+	]
+>
+<FamilyTree>
+        <Member MNumber='p1'>Christine</Member>
+        <Member MNumber='p2'>Stanley</Member>
+        <Member MNumber='c1' Parent='p1 p2'>Maria</Member>
+        <Member MNumber='c2' Parent='p1 p2'>Richard</Member>
+        <Member MNumber='c3' Mother='p1' Father='p2'>James</Member>
+</FamilyTree>
