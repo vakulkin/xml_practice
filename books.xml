@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE books
 	[
-		<!ELEMENT books (book)*>
+		<!ELEMENT books (book*)>
 		<!ELEMENT book (title, author*, publisher*)>
 		<!ELEMENT title (#PCDATA)>
 		<!ELEMENT author (contactInfo?)>    
