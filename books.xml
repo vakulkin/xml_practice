@@ -2,7 +2,7 @@
 <!DOCTYPE books
 	[
 		<!ELEMENT books (book)*>
-		<!ELEMENT book (title, author+, publisher)>
+		<!ELEMENT book (title, author*, publisher*)>
 		<!ELEMENT title (#PCDATA)>
 		<!ELEMENT author (contactInfo?)>    
 		<!ELEMENT publisher (#PCDATA)>
@@ -10,8 +10,8 @@
 		<!ELEMENT email (#PCDATA)>
 		<!ELEMENT phone (#PCDATA)>
 
-		<!ATTLIST author name CDATA #REQUIRED>
-		<!ATTLIST contactInfo person CDATA #REQUIRED>
+		<!ATTLIST author name CDATA #IMPLIED>
+		<!ATTLIST contactInfo person CDATA #IMPLIED>
 
 	]
 >
