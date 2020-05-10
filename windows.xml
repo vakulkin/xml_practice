@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<windows>
+<order>
+	<client>
+		<human>
+			<fname>Ellisha</fname>
+			<lname>Leon</lname>
+			<emails>
+					<email>Ellisha.Leon@el.com</email>
+			</emails>
+			<phones>
+				<phone>485744334444</phone>
+				<phone>485744545429</phone>
+			</phones>			
+		</human>
+		<companyname>Ellisha Leon Company</companyname>
+		<adress>
+			<country>Poland</country>
+			<city>Lodz</city>
+			<street>Matejki</street>
+			<building>3</building>
+			<apt>22</apt>
+			<zip>91404</zip>
+		</adress>
+		<note>Example note about klient</note>
+	</client>
+	<actions>
+		<action status="completed" date-start="20200306T08:30:32" date-end="20200306T09:21:32" sale="0" sum="0" total="0" payment="none">
+			<!-- status - on_hold, in_progress, completed  -->
+			<!-- date-start - YYYYMMDDThhmmss -->
+			<!-- date-end - YYYYMMDDThhmmss -->
+			<!-- sale - float -->
+			<!-- sum - float -->
+			<!-- total - float -->
+			<!-- payment - none, cash, card, transfer -->
+			
+			<products sale="100">
+				<product price="500" num="3">
+				<!-- num - integer -->
+					Window type A 300x150
+				</product>
+				<product price="700" num="1">
+					Window type C 300x300
+				</product>
+				<product price="15" num="4">
+					Handle C221TQ
+				</product>
+			</products>
+			<services sale="5">
+				<service price="500" num="3">
+					Delivery
+				</service>
+			</services>
+			<workers>
+				<worker>
+					<human>
+						<fname>Szymon</fname>
+						<lname>Toerd</lname>
+						<emails>
+								<email>Szymon.Toerd@okna.com</email>
+						</emails>
+						<phones>
+							<phone>485744343222</phone>
+						</phones>			
+					</human>
+					<equipment>
+						<item num="1">Opel Omega EL332AR</item>
+					</equipment>
+				</worker>
+			</workers>
+			<contact>
+				<human>
+					<fname>Tom</fname>
+					<lname>Watez</lname>
+					<emails>
+							<email>Tom.Watez@el.com</email>
+					</emails>
+					<phones>
+						<phone>485744678907</phone>
+					</phones>			
+				</human>
+				<adress>
+					<country>Poland</country>
+					<city>Lodz</city>
+					<street>Retkinia</street>
+					<building>32</building>
+					<apt>91-333</apt>
+				</adress>
+			</contact>
+			<note>
+				comment
+			</note>
+		</action>
+
+		<action status="completed" date-start="20200307T08:34:36" date-end="20200307T016:21:32" sale="0" sum="0" total="0" payment="none">
+			<services sale="0" type="card">
+				<service price="50" num="3">
+					Window installation type A
+				</service>
+				<service price="70" num="1">
+					Window installation type C
+				</service>
+			</services>
+			<workers>
+				<worker>
+					<human>
+						<fname>Szymon</fname>
+						<lname>Toerd</lname>
+						<emails>
+								<email>Szymon.Toerd@okna.com</email>
+						</emails>
+						<phones>
+							<phone>485744343222</phone>
+						</phones>			
+					</human>
+					<equipment>
+						<item num="1">Opel Omega EL332AR</item>
+						<item num="1">Drill Bosh</item>
+					</equipment>
+				</worker>
+			</workers>
+			<contact>
+				<human>
+					<fname>Tom</fname>
+					<lname>Watez</lname>
+					<emails>
+							<email>Tom.Watez@el.com</email>
+					</emails>
+					<phones>
+						<phone>485744678907</phone>
+					</phones>			
+				</human>
+				<adress>
+					<country>Poland</country>
+					<city>Lodz</city>
+					<street>Retkinia</street>
+					<building>32</building>
+					<apt>91-333</apt>
+				</adress>
+			</contact>
+			<note>
+				comment
+			</note>
+		</action>
+	</actions>
+</order>
+</windows>
+
