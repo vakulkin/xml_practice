@@ -1,136 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <windows>
-<order>
-	<client>
-		<human>
-			<fname>Ellisha</fname>
-			<lname>Leon</lname>
-			<emails>
-					<email>Ellisha.Leon@el.com</email>
-			</emails>
-			<phones>
-				<phone>485744334444</phone>
-				<phone>485744545429</phone>
-			</phones>			
-		</human>
+
+
+<people>
+	<human id="1" type="client" phones="1,2" emails="1" address="1">
+		<fname>Ellisha</fname>
+		<lname>Leon</lname>
 		<companyname>Ellisha Leon Company</companyname>
-		<adress>
-			<country>Poland</country>
-			<city>Lodz</city>
-			<street>Matejki</street>
-			<building>3</building>
-			<apt>22</apt>
-			<zip>91404</zip>
-		</adress>
-		<note>Example note about klient</note>
-	</client>
-	<actions>
-		<action status="completed" date-start="20200306T08:30:32" date-end="20200306T09:21:32" sale="0" sum="0" total="0" payment="none">
-			<!-- status - on_hold, in_progress, completed  -->
-			<!-- date-start - YYYYMMDDThhmmss -->
-			<!-- date-end - YYYYMMDDThhmmss -->
-			<!-- sale - float -->
-			<!-- sum - float -->
-			<!-- total - float -->
-			<!-- payment - none, cash, card, transfer -->
-			
-			<products sale="100">
-				<product price="500" num="3" code="W87B2" size="300x150">
-				<!-- num - integer -->
-					Window 
-				</product>
-				<product price="700" num="1" code="W87C3" size="300x300">
-					Window 
-				</product>
-				<product price="15" code="C221TQ" num="4" >
-					Handle 
-				</product>
-			</products>
-			<services sale="5">
-				<service price="500" num="3" workerID="1" itemID="1">
-					Delivery
-				</service>
-			</services>
-			<contact>
-				<human>
-					<fname>Tom</fname>
-					<lname>Watez</lname>
-					<emails>
-							<email>Tom.Watez@el.com</email>
-					</emails>
-					<phones>
-						<phone>485744678907</phone>
-					</phones>			
-				</human>
-				<adress>
-					<country>Poland</country>
-					<city>Lodz</city>
-					<street>Retkinia</street>
-					<building>32</building>
-					<apt>91-333</apt>
-				</adress>
-			</contact>
+		<note>Example note about klient</note>	
+	</human>
+	<human id="2" type="worker" phones="3" emails="2">
+		<fname>Tom</fname>
+		<lname>Watez</lname>
+		<note>Example note about worker</note>
+	</human>
+	<human id="3" type="worker" phones="4" emails="3">
+		<fname>Szymon</fname>
+		<lname>Toerd</lname>		
+	</human>
+</people>
+
+
+<emails>
+	<email id="1">Ellisha.Leon@el.com</email>
+	<email id="2">Tom.Watez@el.com</email>
+	<email id="3">Szymon.Toerd@okna.com</email>
+</emails>
+
+
+<phones>
+	<phone id="1">485744334444</phone>
+	<phone id="2">485744545429</phone>
+	<phone id="3">485744678907</phone>
+	<phone id="4">485744343222</phone>
+</phones>
+
+
+<addresses>
+	<address id="1">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Matejki</street>
+		<building>3</building>
+		<apt>22</apt>
+		<zip>91-404</zip>
+	</address>
+	<address id="2">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Retkinia</street>
+		<building>32</building>
+		<apt>91-333</apt>
+	</address>
+</addresses>
+
+
+<products>
+	<product id="1" type="product" price="500" code="W87B2" size="300x150">
+		Window 
+	</product>
+	<product id="2" type="product" price="700" code="W87C3" size="300x300">
+		Window 
+	</product>
+	<product id="3" type="product" price="15" code="C221TQ">
+		Handle 
+	</product>
+	<product id="4" type="service" price="500" code="AD444R">
+		Delivery
+	</product>
+	<product id="5" type="service" price="50" code="AD443S">
+		Window installation
+	</product>
+</products>
+
+<equipments>
+	<equipment id="1">Opel Omega EL332AR</equipment>
+	<equipment id="2">Drill Bosch</equipment>
+</equipments>
+
+<orders>
+	<order id="1">
+		<action status="completed" date-start="20200306T08:30:32" date-end="20200306T09:21:32">
+			<act_products>
+				<act_product product="1" num="3" sale="30" />
+				<act_product product="2" num="1" />
+				<act_product product="3" num="1" />
+				<act_product product="4" num="1" />
+			</act_products>
+			<act_workers>
+				<act_worker human="2" equipment="1,2"/>
+			</act_workers>
+			<act_client human="1">
 			<note>
 				comment
 			</note>
 		</action>
 
-		<action status="completed" date-start="20200307T08:34:36" date-end="20200307T016:21:32" sale="0" sum="0" total="0" payment="none">
-			<services sale="0" type="card">
-				<service price="50" num="3" workerID ="1" itemID="2">
-					Window installation type A
-				</service>
-				<service price="70" num="1" workerID="1" itemID="2">
-					Window installation type C
-				</service>
-			</services>
-			<contact>
-				<human>
-					<fname>Tom</fname>
-					<lname>Watez</lname>
-					<emails>
-							<email>Tom.Watez@el.com</email>
-					</emails>
-					<phones>
-						<phone>485744678907</phone>
-					</phones>			
-				</human>
-				<adress>
-					<country>Poland</country>
-					<city>Lodz</city>
-					<street>Retkinia</street>
-					<building>32</building>
-					<apt>91-333</apt>
-				</adress>
-			</contact>
+		<action status="completed" date-start="20200307T08:34:36" date-end="20200307T016:21:32" human="1" address="1">
+			<act_products>
+				<act_product product="5" num="1" sale="100" />
+			</act_products>
+			<act_workers>
+				<act_worker human="2" equipment="1,2"/>
+			</act_workers>
 			<note>
 				comment
 			</note>
 		</action>
-	</actions>
-</order>
+	</order>
+</orders>
 
-	<workers>
-				<worker>
-					<human>
-						<fname>Szymon</fname>
-						<lname>Toerd</lname>
-						<workerID>1</workerID>
-						<emails>
-								<email>Szymon.Toerd@okna.com</email>
-						</emails>
-						<phones>
-							<phone>485744343222</phone>
-						</phones>			
-					</human>
-					
-				</worker>
-	</workers>
-			
-	<equipment>
-			<item itemID="1">Opel Omega EL332AR</item>
-			<item itemID="2">Drill Bosch</item>
-	</equipment>
 </windows>
-
