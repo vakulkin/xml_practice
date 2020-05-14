@@ -46,7 +46,9 @@
 <!ELEMENT action (act_products, act_workers, act_client)+>
 <!ATTLIST action status (completed|uncompleted) 'uncompleted'
 				 date-start (CDATA) #REQUIRED
-				 date-end (CDATA) #REQUIRED>
+				 date-end (CDATA) #REQUIRED
+				 client IDREF #REQUIRED
+				 addres IDREF #REQUIRED>
 <!ELEMENT act_products (act_product)*>
 <!ATTLIST act_product id IDREF #REQUIRED
 					  num (PCDATA) #REQUIRED
