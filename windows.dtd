@@ -44,6 +44,9 @@
 <!ATTLIST order id ID #REQUIRED>
 
 <!ELEMENT action (act_products, act_workers, act_client)+>
+<!ATTLIST action status (completed|uncompleted) 'uncompleted'
+				 date-start (CDATA) #REQUIRED
+				 date-end (CDATA) #REQUIRED>
 <!ELEMENT act_products (act_product)*>
 <!ATTLIST act_product id IDREF #REQUIRED
 					  num (PCDATA) #REQUIRED
@@ -58,4 +61,4 @@
 <!ELEMENT note (CDATA)>
 <!ATTLIST act_client human IDREF #REQUIRED>
 
-]>
+]> 
