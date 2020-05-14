@@ -1,0 +1,61 @@
+<!DOCTYPE windows
+[
+<!ELEMENT windows (people, emails, phones, adresses, products, equipments, orders)*>
+
+
+
+
+<!ELEMENT people (human)*>
+<!ELEMENT human (fname, lname, companyname?, note?)>
+<!ATTLIST human
+				id ID #REQUIRED
+				type (client|worker) 'client'
+				phones IDREFS #REQUIRED
+				emails IDREFS #REQUIRED
+				adresses IDREFS #IMPLIED>
+
+<!ELEMENT emails (email)+>
+<!ELEMENT email (CDATA)>
+<!ATTLIST email
+				id ID #REQUIRED>
+
+<!ELEMENT phones (phone)+>
+<!ELEMENT phone (#PCDATA)*>
+<!ATTLIST phone id ID #REQUIRED>
+
+<!ELEMENT adresses (adress)>
+<!ELEMENT adress (country, city, street, building, apt, zip)>
+<!ATTLIST adress id ID #REQUIRED>
+
+<!ELEMENT products (prooduct)?>
+<!ELEMENT product (CDATA)>
+<!ATTLIST product id ID #REQUIRED
+				  type (product|service) 'product'
+				  price (PCDATA) #IMPLIED
+				  code CDATA #REQUIRED
+				  size (PCDATA) #IMPLIED>
+
+<!ELEMENT equipments (equipment)*>
+<!ELEMENT equipment (CDATA)>
+<!ATTLIST equipment id ID #REQUIRED>
+
+<!ELEMENT orders (order)*>
+<!ELEMENT order (action)+>
+<!ATTLIST order id ID #REQUIRED>
+
+<!ELEMENT action (act_products, act_workers, act_client)+>
+<!ELEMENT act_products (act_product)*>
+<!ATTLIST act_product id IDREF #REQUIRED
+					  num (PCDATA) #REQUIRED
+					  sale (PCDATA) #IMPLIED>
+
+<!ELEMENT act_workers (act_worker)+>
+<!ELEMENT act_worker EMPTY>
+<!ATTLIST act_worker human IDREF #REQUIRED
+					 equipment IDREFS #REQUIRED>
+
+<!ELEMENT act_client (note)?>
+<!ELEMENT note (CDATA)>
+<!ATTLIST act_client human IDREF #REQUIRED>
+
+]>
