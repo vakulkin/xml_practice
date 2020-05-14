@@ -81,7 +81,7 @@
 
 <orders>
 	<order id="1">
-		<action status="completed" date-start="20200306T08:30:32" date-end="20200306T09:21:32" client="1" address="1">
+		<action status="completed" date-start="2020-03-06T08:30:32Z" date-end="2020-03-06T09:21:32Z" client="1" address="1">
 			<act_products>
 				<act_product product="1" num="3" sale="30" />
 				<act_product product="2" num="1" />
@@ -96,9 +96,9 @@
 			</note>
 		</action>
 
-		<action status="completed" date-start="20200307T08:34:36" date-end="20200307T016:21:32" client="1" address="1">
+		<action status="completed" date-start="2020-03-07T08:34:36" date-end="2020-03-07T16:21:32Z" client="1" address="1">
 			<act_products>
-				<act_product product="5" num="1" sale="100" />
+				<act_product product="4" num="1" sale="2" />
 			</act_products>
 			<act_workers>
 				<act_worker human="2" equipment="1,2"/>
