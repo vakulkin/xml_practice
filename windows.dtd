@@ -1,12 +1,15 @@
 <!DOCTYPE windows
 [
 <!ELEMENT windows (people, adresses, products, equipments, orders)*>
-
-
+<!--element windows jest ciałem dokumentu-->
 
 
 <!ELEMENT people (human)*>
+<!--element people chroni w sobie zbior elementów human-->
+
 <!ELEMENT human (fname, lname, companyname?, note?, emails+, phones+)>
+<!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
+
 <!ELEMENT emails (email)+>
 <!ELEMENT email (CDATA)>
 <!ELEMENT phones (phone)+>
@@ -14,36 +17,49 @@
 <!ATTLIST human
 				hum_id ID #REQUIRED
 				type (client|worker) 'client'
-				adresses IDREFS #IMPLIED>
-
+				adress IDREFS #IMPLIED>
+<!--atrybut type wskazuje rol czlowieka, może być to pracownik albo klient, także element human ma atrybut adress, ktory jest referencja na adr_id z gałązi adresses-->
 
 
 <!ELEMENT adresses (adress)>
 <!ELEMENT adress (country, city, street, building, apt, zip)>
+<!--element adress jest zbiorem elemetów kraj, miasto, budynek, pokój, kod pocztowy -->
 <!ATTLIST adress adr_id ID #REQUIRED>
+<!--atrybut adr_id pozwala nam użuwać element adress prez referencje -->
+
 
 <!ELEMENT products (prooduct)?>
 <!ELEMENT product (CDATA)>
+<!--element product jest lańcuchem tekstowym i zawiera nazwe produktu -->
 <!ATTLIST product pr_id ID #REQUIRED
 				  type (product|service) 'product'
 				  price (PCDATA) #IMPLIED
 				  code CDATA #REQUIRED
 				  size (PCDATA) #IMPLIED>
+<!--atrybut pr_id pozwala nam użuwać element product prez referencje, atrybut type jes używany dla wyboru między produktem i usługa, price - cena produkta/usługi, code - jest kodem produkta/usługi, size - rozmiar w razie gdy produkte, jest okno-->
 
 <!ELEMENT equipments (equipment)*>
+<!--elemnt equipments jest listą rzeczywistych narzędzi-->
 <!ELEMENT equipment (CDATA)>
 <!ATTLIST equipment eq_id ID #REQUIRED>
+<!--atrybut eq_id pozwala nam użuwać element equipment prez referencje-->
 
 <!ELEMENT orders (order)*>
+<!--element orders jest gałędzią zawierającą elementy order, czyli zamówienia-->
 <!ELEMENT order (action)+>
+<!--element order jest listą elementów action, czyli działań-->
 <!ATTLIST order order_id ID #REQUIRED>
+<!--atrybut order_id pozwala nam użuwać element order prez referencje-->
 
 <!ELEMENT action (act_products, act_workers, act_client)+>
+<!--element action zawiera listę produktów używanych w zamówieniu, talże listę pracownikow wykonujących zamówienie i opcjonalne notatki-->
 <!ATTLIST action status (completed|uncompleted) 'uncompleted'
 				 date-start (CDATA) #REQUIRED
 				 date-end (CDATA) #REQUIRED
 				 client IDREF #REQUIRED
 				 addres IDREF #REQUIRED>
+<!--atrybut status - wykonane/nie wykonane, atrybuty date-start date-end początek i koniec wykonania zamówienia, atrybuty client i adress referencje-->
+
 <!ELEMENT act_products (act_product)*>
 <!ATTLIST act_product id IDREF #REQUIRED
 					  num (PCDATA) #REQUIRED
