@@ -223,7 +223,7 @@
 				<xs:attribute name="equipments" use="optional">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:pattern value="e[0-9]+(,(e[0-9])+)*"/>
+							<xs:pattern value="e[0-9]+(,e[0-9]+)*"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
