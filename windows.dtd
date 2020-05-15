@@ -1,6 +1,6 @@
 <!DOCTYPE windows
 [
-<!ELEMENT windows (people, emails, phones, adresses, products, equipments, orders)*>
+<!ELEMENT windows (people, adresses, products, equipments, orders)*>
 
 
 
@@ -10,7 +10,7 @@
 <!ELEMENT emails (email)+>
 <!ELEMENT email (CDATA)>
 <!ELEMENT phones (phone)+>
-<!ELEMENT phone (#PCDATA)*>
+<!ELEMENT phone (#PCDATA)>
 <!ATTLIST human
 				hum_id ID #REQUIRED
 				type (client|worker) 'client'

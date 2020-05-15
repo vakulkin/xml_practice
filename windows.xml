@@ -11,7 +11,11 @@
 		<note>Example note about klient</note>
 		<emails>
 			<email>Ellisha.Leon@el.com</email>
-		</emails>	
+		</emails>
+		<phones>
+			<phone>485744334444</phone>
+			<phone>485744678907</phone>
+		</phones>	
 	</human>
 	<human hum_id="h2" type="worker" >
 		<fname>Tom</fname>
@@ -20,13 +24,19 @@
 		<emails>
 			<email>Tom.Watez@el.com</email>
 		</emails>
+		<phones>
+			<phone>485744343222</phone>
+		</phones>
 	</human>
 	<human hum_id="h3" type="worker" >
 		<fname>Szymon</fname>
 		<lname>Toerd</lname>	
 		<emails>
 			<email>Szymon.Toerd@okna.com</email>
-		</emails>	
+		</emails>
+		<phones>
+			<phone>485744545429</phone>
+		</phones>	
 	</human>
 </people>
 
