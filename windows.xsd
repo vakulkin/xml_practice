@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="windows" type="windowsType"/>
+	
+	<xs:complexType name="windowsType">
+		<xs:sequence>
+			<xs:element type="peopleType" name="people">				
+				<xs:unique name="human_unique">
+					<xs:selector xpath="./human"/>
+					<xs:field xpath="@hum_id"/>
+				</xs:unique>			
+			</xs:element>
+			<xs:element type="addressesType" name="addresses">
+				<xs:unique name="address_unique">
+					<xs:selector xpath="./address"/>
+					<xs:field xpath="@adr_id"/>
+				</xs:unique>
+			</xs:element>
+			<xs:element type="productsType" name="products">
+				<xs:unique name="product_unique">
+					<xs:selector xpath="./product"/>
+					<xs:field xpath="@pr_id"/>
+				</xs:unique>
+			</xs:element>
+			<xs:element type="equipmentsType" name="equipments">
+				<xs:unique name="equipment_unique">
+					<xs:selector xpath="./equipment"/>
+					<xs:field xpath="@eq_id"/>
+				</xs:unique>
+			</xs:element>
+			<xs:element type="ordersType" name="orders">
+				<xs:unique name="order_unique">
+					<xs:selector xpath="./order"/>
+					<xs:field xpath="@order_id"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="peopleType">
+		<xs:sequence>
+			<xs:element type="humanType" name="human" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="humanType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="fname"/>
+			<xs:element type="xs:string" name="lname"/>
+			<xs:element type="xs:string" name="companyname" minOccurs="0"/>
+			<xs:element type="xs:string" name="note" minOccurs="0"/>
+			<xs:element type="emailsType" name="emails"/>
+			<xs:element type="phonesType" name="phones"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="hum_id" use="required"/>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="client|worker"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute type="xs:int" name="address" use="optional"/>
+	</xs:complexType>
+	
+	<xs:complexType name="emailsType">
+		<xs:sequence>
+			<xs:element name="email" maxOccurs="unbounded">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="phonesType">
+		<xs:sequence>
+			<xs:element name="phone" maxOccurs="unbounded">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{11}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="addressesType">
+		<xs:sequence>
+			<xs:element type="addressType" name="address" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="country"/>
+			<xs:element type="xs:string" name="city"/>
+			<xs:element type="xs:string" name="street"/>
+			<xs:element type="xs:string" name="building"/>
+			<xs:element type="xs:string" name="apt" minOccurs="0"/>
+			<xs:element name="zip" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{2}-[0-9]{3}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="adr_id" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="productsType">
+		<xs:sequence>
+			<xs:element type="productType" name="product" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="productType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="pr_id" use="required"/>
+				<xs:attribute name="type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="product|service"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute type="xs:int" name="price" use="required"/>
+				<xs:attribute type="xs:string" name="code" use="required"/>
+				<xs:attribute type="xs:string" name="size" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="equipmentsType">
+		<xs:sequence>
+			<xs:element type="equipmentType" name="equipment" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="equipmentType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="eq_id" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+		
+	<xs:complexType name="ordersType">
+		<xs:sequence>
+			<xs:element type="orderType" name="order"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="orderType">
+		<xs:sequence>
+			<xs:element type="actionType" name="action" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="order_id"/>
+	</xs:complexType>
+	
+	<xs:complexType name="actionType">
+		<xs:sequence>
+			<xs:element type="act_productsType" name="act_products"/>
+			<xs:element type="act_workersType" name="act_workers"/>
+			<xs:element type="xs:string" name="note"/>
+		</xs:sequence>
+		<xs:attribute name="status">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="onhold|processing|completed|canceled"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute type="xs:dateTime" name="date-start" use="required"/>
+		<xs:attribute type="xs:dateTime" name="date-end" use="optional"/>
+		<xs:attribute type="xs:string" name="client" use="required"/>
+		<xs:attribute type="xs:string" name="address" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="act_productsType">
+		<xs:sequence>
+			<xs:element type="act_productType" name="act_product" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="act_productType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="product" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="p[0-9]+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute type="xs:int" name="num" use="required"/>
+				<xs:attribute type="xs:int" name="sale" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+		
+	<xs:complexType name="act_workersType">
+		<xs:sequence>
+			<xs:element type="act_workerType" name="act_worker"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="act_workerType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="human" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="h[0-9]+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="equipment" use="optional">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="e[0-9]+(,(e[0-9])+)*"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	
+</xs:schema>
