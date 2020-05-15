@@ -13,8 +13,8 @@
 			<email>Ellisha.Leon@el.com</email>
 		</emails>
 		<phones>
-			<phone>485744334444</phone>
-			<phone>485744678907</phone>
+			<phone>48574433444</phone>
+			<phone>48574467890</phone>
 		</phones>	
 	</human>
 	<human hum_id="h2" type="worker" >
@@ -25,7 +25,7 @@
 			<email>Tom.Watez@el.com</email>
 		</emails>
 		<phones>
-			<phone>485744343222</phone>
+			<phone>48574433442</phone>
 		</phones>
 	</human>
 	<human hum_id="h3" type="worker" >
@@ -35,11 +35,10 @@
 			<email>Szymon.Toerd@okna.com</email>
 		</emails>
 		<phones>
-			<phone>485744545429</phone>
+			<phone>48573253444</phone>
 		</phones>	
 	</human>
 </people>
-
 
 <addresses>
 	<address adr_id="a1">
@@ -58,7 +57,6 @@
 		<apt>91-333</apt>
 	</address>
 </addresses>
-
 
 <products>
 	<product pr_id="p1" type="product" price="500" code="W87B2" size="300x150">
@@ -105,7 +103,7 @@
 				<act_product product="p4" num="1" sale="2" />
 			</act_products>
 			<act_workers>
-				<act_worker human="h2" equipment="e1,e2"/>
+				<act_worker human="h2" equipment="e2,e2"/>
 			</act_workers>
 			<note>
 				comment
