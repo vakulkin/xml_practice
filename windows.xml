@@ -4,41 +4,35 @@
 
 
 <people>
-	<human id="1" type="client" phones="1,2" emails="1" address="1">
+	<human humid="h1" type="client" address="1">
 		<fname>Ellisha</fname>
 		<lname>Leon</lname>
 		<companyname>Ellisha Leon Company</companyname>
-		<note>Example note about klient</note>	
+		<note>Example note about klient</note>
+		<emails>
+			<email>Ellisha.Leon@el.com</email>
+		</emails>	
 	</human>
-	<human id="2" type="worker" phones="3" emails="2">
+	<human humid="h2" type="worker" >
 		<fname>Tom</fname>
 		<lname>Watez</lname>
 		<note>Example note about worker</note>
+		<emails>
+			<email>Tom.Watez@el.com</email>
+		</emails>
 	</human>
-	<human id="3" type="worker" phones="4" emails="3">
+	<human humid="h3" type="worker" >
 		<fname>Szymon</fname>
-		<lname>Toerd</lname>		
+		<lname>Toerd</lname>	
+		<emails>
+			<email>Szymon.Toerd@okna.com</email>
+		</emails>	
 	</human>
 </people>
 
 
-<emails>
-	<email id="1">Ellisha.Leon@el.com</email>
-	<email id="2">Tom.Watez@el.com</email>
-	<email id="3">Szymon.Toerd@okna.com</email>
-</emails>
-
-
-<phones>
-	<phone id="1">485744334444</phone>
-	<phone id="2">485744545429</phone>
-	<phone id="3">485744678907</phone>
-	<phone id="4">485744343222</phone>
-</phones>
-
-
 <addresses>
-	<address id="1">
+	<address adrid="a1">
 		<country>Poland</country>
 		<city>Lodz</city>
 		<street>Matejki</street>
@@ -46,7 +40,7 @@
 		<apt>22</apt>
 		<zip>91-404</zip>
 	</address>
-	<address id="2">
+	<address adrid="a2">
 		<country>Poland</country>
 		<city>Lodz</city>
 		<street>Retkinia</street>
@@ -57,51 +51,51 @@
 
 
 <products>
-	<product id="1" type="product" price="500" code="W87B2" size="300x150">
+	<product prid="p1" type="product" price="500" code="W87B2" size="300x150">
 		Window 
 	</product>
-	<product id="2" type="product" price="700" code="W87C3" size="300x300">
+	<product prid="p2" type="product" price="700" code="W87C3" size="300x300">
 		Window 
 	</product>
-	<product id="3" type="product" price="15" code="C221TQ">
+	<product prid="p3" type="product" price="15" code="C221TQ">
 		Handle 
 	</product>
-	<product id="4" type="service" price="500" code="AD444R">
+	<product prid="p4" type="service" price="500" code="AD444R">
 		Delivery
 	</product>
-	<product id="5" type="service" price="50" code="AD443S">
+	<product prid="p5" type="service" price="50" code="AD443S">
 		Window installation
 	</product>
 </products>
 
 <equipments>
-	<equipment id="1">Opel Omega EL332AR</equipment>
-	<equipment id="2">Drill Bosch</equipment>
+	<equipment eqid="e1">Opel Omega EL332AR</equipment>
+	<equipment eqid="e2">Drill Bosch</equipment>
 </equipments>
 
 <orders>
-	<order id="1">
-		<action status="completed" date-start="2020-03-06T08:30:32Z" date-end="2020-03-06T09:21:32Z" client="1" address="1">
+	<order orderid="o1">
+		<action status="completed" date-start="2020-03-06T08:30:32Z" date-end="2020-03-06T09:21:32Z" client="h1" address="a1">
 			<act_products>
-				<act_product product="1" num="3" sale="30" />
-				<act_product product="2" num="1" />
-				<act_product product="3" num="1" />
-				<act_product product="4" num="1" />
+				<act_product product="p1" num="3" sale="30" />
+				<act_product product="p2" num="1" />
+				<act_product product="p3" num="1" />
+				<act_product product="p4" num="1" />
 			</act_products>
 			<act_workers>
-				<act_worker human="2" equipment="1,2"/>
+				<act_worker human="h2" equipment="e1,e2"/>
 			</act_workers>
 			<note>
 				comment
 			</note>
 		</action>
 
-		<action status="completed" date-start="2020-03-07T08:34:36" date-end="2020-03-07T16:21:32Z" client="1" address="1">
+		<action status="completed" date-start="2020-03-07T08:34:36" date-end="2020-03-07T16:21:32Z" client="h1" address="a1">
 			<act_products>
-				<act_product product="4" num="1" sale="2" />
+				<act_product product="p4" num="1" sale="2" />
 			</act_products>
 			<act_workers>
-				<act_worker human="2" equipment="1,2"/>
+				<act_worker human="h2" equipment="e1,e2"/>
 			</act_workers>
 			<note>
 				comment

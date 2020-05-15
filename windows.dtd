@@ -6,30 +6,25 @@
 
 
 <!ELEMENT people (human)*>
-<!ELEMENT human (fname, lname, companyname?, note?)>
-<!ATTLIST human
-				id ID #REQUIRED
-				type (client|worker) 'client'
-				phones IDREFS #REQUIRED
-				emails IDREFS #REQUIRED
-				adresses IDREFS #IMPLIED>
-
+<!ELEMENT human (fname, lname, companyname?, note?, emails+, phones+)>
 <!ELEMENT emails (email)+>
 <!ELEMENT email (CDATA)>
-<!ATTLIST email
-				id ID #REQUIRED>
-
 <!ELEMENT phones (phone)+>
 <!ELEMENT phone (#PCDATA)*>
-<!ATTLIST phone id ID #REQUIRED>
+<!ATTLIST human
+				humid ID #REQUIRED
+				type (client|worker) 'client'
+				adresses IDREFS #IMPLIED>
+
+
 
 <!ELEMENT adresses (adress)>
 <!ELEMENT adress (country, city, street, building, apt, zip)>
-<!ATTLIST adress id ID #REQUIRED>
+<!ATTLIST adress adrid ID #REQUIRED>
 
 <!ELEMENT products (prooduct)?>
 <!ELEMENT product (CDATA)>
-<!ATTLIST product id ID #REQUIRED
+<!ATTLIST product prid ID #REQUIRED
 				  type (product|service) 'product'
 				  price (PCDATA) #IMPLIED
 				  code CDATA #REQUIRED
@@ -37,11 +32,11 @@
 
 <!ELEMENT equipments (equipment)*>
 <!ELEMENT equipment (CDATA)>
-<!ATTLIST equipment id ID #REQUIRED>
+<!ATTLIST equipment eqid ID #REQUIRED>
 
 <!ELEMENT orders (order)*>
 <!ELEMENT order (action)+>
-<!ATTLIST order id ID #REQUIRED>
+<!ATTLIST order orderid ID #REQUIRED>
 
 <!ELEMENT action (act_products, act_workers, act_client)+>
 <!ATTLIST action status (completed|uncompleted) 'uncompleted'
