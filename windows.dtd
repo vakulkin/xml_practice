@@ -12,7 +12,7 @@
 <!ELEMENT phones (phone)+>
 <!ELEMENT phone (#PCDATA)*>
 <!ATTLIST human
-				humid ID #REQUIRED
+				hum_id ID #REQUIRED
 				type (client|worker) 'client'
 				adresses IDREFS #IMPLIED>
 
@@ -20,11 +20,11 @@
 
 <!ELEMENT adresses (adress)>
 <!ELEMENT adress (country, city, street, building, apt, zip)>
-<!ATTLIST adress adrid ID #REQUIRED>
+<!ATTLIST adress adr_id ID #REQUIRED>
 
 <!ELEMENT products (prooduct)?>
 <!ELEMENT product (CDATA)>
-<!ATTLIST product prid ID #REQUIRED
+<!ATTLIST product pr_id ID #REQUIRED
 				  type (product|service) 'product'
 				  price (PCDATA) #IMPLIED
 				  code CDATA #REQUIRED
@@ -32,11 +32,11 @@
 
 <!ELEMENT equipments (equipment)*>
 <!ELEMENT equipment (CDATA)>
-<!ATTLIST equipment eqid ID #REQUIRED>
+<!ATTLIST equipment eq_id ID #REQUIRED>
 
 <!ELEMENT orders (order)*>
 <!ELEMENT order (action)+>
-<!ATTLIST order orderid ID #REQUIRED>
+<!ATTLIST order order_id ID #REQUIRED>
 
 <!ELEMENT action (act_products, act_workers, act_client)+>
 <!ATTLIST action status (completed|uncompleted) 'uncompleted'
