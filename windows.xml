@@ -91,7 +91,7 @@
 				<act_product product="p4" num="1" />
 			</act_products>
 			<act_workers>
-				<act_worker human="h2" equipment="e1,e2"/>
+				<act_worker human="h2" equipments="e1,e2"/>
 			</act_workers>
 			<note>
 				comment
@@ -103,7 +103,7 @@
 				<act_product product="p4" num="1" sale="2" />
 			</act_products>
 			<act_workers>
-				<act_worker human="h2" equipment="e2,e2"/>
+				<act_worker human="h2" equipments="e1,e2"/>
 			</act_workers>
 			<note>
 				comment
