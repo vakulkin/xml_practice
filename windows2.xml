@@ -116,7 +116,7 @@
 			</note>
 		</action>
 
-		<action status="onhold" date-start="2020-06-08T08:30:23" date-end="" client="h9" address="a9">
+		<action status="onhold" date-start="2020-06-08T08:30:23" client="h9" address="a9">
 			<act_products>
 				<act_product product="p5" num="1" sale="20" />
 			</act_products>
