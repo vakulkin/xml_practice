@@ -74,7 +74,7 @@
 		<xs:attribute name="address" use="optional">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<!-- Walidacja adresu  -->
+					<!-- Walidacja ID referencji adresu -->
 					<xs:pattern value="a[0-9]+"/>
 				</xs:restriction>
 			</xs:simpleType>
@@ -213,51 +213,61 @@
 		<xs:attribute name="status">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<!-- Stan działania: zawieszone, zakończone, zakończone, anulowane -->
+					<!-- Stan działania: wstrzymane, w trakcie realizacji, zakończone, anulowane -->
 					<xs:pattern value="onhold|processing|completed|canceled"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
+		<!-- Data rozpoczęcia -->
 		<xs:attribute type="xs:dateTime" name="date-start" use="required"/>
+		<!-- Data zakończenia -->
 		<xs:attribute type="xs:dateTime" name="date-end" use="optional"/>
 		<xs:attribute name="client" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<xs:pattern value="c[0-9]+"/>
+					<!-- Walidacja ID referencji klientu -->
+					<xs:pattern value="h[0-9]+"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 		<xs:attribute name="address" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
+					<!-- Walidacja ID referencji adresy instalacji okien lub dostawy -->
 					<xs:pattern value="a[0-9]+"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
 	
+	<!-- Blok towarów w akcji -->
 	<xs:complexType name="act_productsType">
 		<xs:sequence>
 			<xs:element type="act_productType" name="act_product" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Oddzielny towar w akcji -->
 	<xs:complexType name="act_productType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attribute name="product" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
+							<!-- Walidacja ID referencji produktu -->
 							<xs:pattern value="p[0-9]+"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
+				<!-- Ilość towarow lub usług w akcji -->
 				<xs:attribute type="xs:int" name="num" use="required"/>
+				<!-- Zniżka na towarн lub usługш -->
 				<xs:attribute type="xs:int" name="sale" use="optional"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-		
+	
+	<!-- Blok pracowników w akcji -->
 	<xs:complexType name="act_workersType">
 		<xs:sequence>
 			<xs:element type="act_workerType" name="act_worker" maxOccurs="unbounded" minOccurs="0"/>
@@ -270,6 +280,7 @@
 				<xs:attribute name="human" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
+							<!-- Walidacja ID referencji pracownika -->
 							<xs:pattern value="h[0-9]+"/>
 						</xs:restriction>
 					</xs:simpleType>
@@ -277,6 +288,7 @@
 				<xs:attribute name="equipments" use="optional">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
+							<!-- Walidacja ID referencji sprzętu -->
 							<xs:pattern value="e[0-9]+(,e[0-9]+)*"/>
 						</xs:restriction>
 					</xs:simpleType>
