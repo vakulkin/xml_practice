@@ -248,7 +248,7 @@
 	<!-- Blok towarów w akcji -->
 	<xs:complexType name="act_productsType">
 		<xs:sequence>
-			<xs:element type="act_productType" name="act_product" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element type="act_productType" name="act_product" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -275,7 +275,7 @@
 	<!-- Blok pracowników w akcji -->
 	<xs:complexType name="act_workersType">
 		<xs:sequence>
-			<xs:element type="act_workerType" name="act_worker" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element type="act_workerType" name="act_worker" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	
