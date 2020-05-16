@@ -13,6 +13,7 @@
 <!ELEMENT fname (#PCDATA)>
 <!ELEMENT lname (#PCDATA)>
 <!ELEMENT companyname (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
 <!ELEMENT emails (email)>
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT phones (phone)+>
@@ -78,9 +79,5 @@
 <!ELEMENT act_worker EMPTY>
 <!ATTLIST act_worker human IDREF #REQUIRED
 					 equipments IDREFS #IMPLIED>
-
-<!ELEMENT act_client (note)?>
-<!ELEMENT note (#PCDATA)>
-<!ATTLIST act_client human IDREF #REQUIRED>
 
 ]>
