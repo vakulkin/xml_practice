@@ -78,7 +78,7 @@
 	<product pr_id="p13" type="product" price="15" code="C4421R">
 		Handle 
 	</product>
-	<product pr_id="p22" type="product" price="15" code="C4421R">
+	<product pr_id="p22" type="product" price="15" code="C2421R">
 		Handle 
 	</product>
 	<product pr_id="p4" type="service" price="500" code="AD444R">
@@ -116,7 +116,7 @@
 			</note>
 		</action>
 
-		<action status="unhold" date-start="2020-06-08T08:30:23" date-end="" client="h9" address="a9">
+		<action status="onhold" date-start="2020-06-08T08:30:23" date-end="" client="h9" address="a9">
 			<act_products>
 				<act_product product="p5" num="1" sale="20" />
 			</act_products>
