@@ -28,7 +28,7 @@
 			<phone>48574433442</phone>
 		</phones>
 	</human>
-	<human hum_id="h3" type="worker" >
+	<human hum_id="h3" type="client" >
 		<fname>Szymon</fname>
 		<lname>Toerd</lname>	
 		<emails>
@@ -54,7 +54,14 @@
 		<city>Lodz</city>
 		<street>Retkinia</street>
 		<building>32</building>
-		<apt>91-333</apt>
+		<apt>50</apt>
+	</address>
+	<address adr_id="a3">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Golebia</street>
+		<building>6</building>
+		<apt>55</apt>
 	</address>
 </addresses>
 
@@ -111,7 +118,7 @@
 		</action>
 	</order>
 	<order order_id="o2">
-		<action status="processing" date-start="2020-03-06T08:30:32Z" client="h3" address="a3">
+		<action status="processing" date-start="2020-03-07T09:30:22Z" client="h3" address="a3">
 			<act_products>
 				<act_product product="p1" num="3" sale="10" />
 				<act_product product="p4" num="1" />
