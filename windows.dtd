@@ -16,7 +16,7 @@
 <!ELEMENT emails (email)>
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT phones (phone)+>
-<!ELEMENT phone (CDATA)>
+<!ELEMENT phone (#PCDATA)>
 <!ATTLIST human
 				hum_id ID #REQUIRED
 				type (client|worker) 'client'
