@@ -191,7 +191,7 @@
 	<!-- Blok zamówień -->
 	<xs:complexType name="ordersType">
 		<xs:sequence>
-			<xs:element type="orderType" name="order"/>
+			<xs:element type="orderType" name="order" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -199,7 +199,7 @@
 	<xs:complexType name="orderType">
 		<xs:sequence>
 			<!-- Każde zamówienie jest podzielone na akcje (dostawa i instalacja może być w różne dni lub nih może być kilka) -->
-			<xs:element type="actionType" name="action" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element type="actionType" name="action" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<!--  ID zamówieni -->
 		<xs:attribute type="xs:string" name="order_id"/>
