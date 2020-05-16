@@ -20,7 +20,7 @@
 <!ATTLIST human
 				hum_id ID #REQUIRED
 				type (client|worker) 'client'
-				adress IDREFS #IMPLIED>
+				adress IDREF #IMPLIED>
 <!--atrybut type wskazuje rol czlowieka, może być to pracownik albo klient, także element human ma atrybut adress, ktory jest referencja na adr_id z gałązi adresses-->
 
 
