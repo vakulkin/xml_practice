@@ -191,7 +191,7 @@
 	<!-- Blok zamówień -->
 	<xs:complexType name="ordersType">
 		<xs:sequence>
-			<xs:element type="orderType" name="order" maxOccurs="unbounded"/>
+			<xs:element type="orderType" name="order" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
