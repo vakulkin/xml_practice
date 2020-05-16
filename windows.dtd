@@ -1,13 +1,13 @@
 <!DOCTYPE windows
 [
-<!ELEMENT windows (people, adresses, products, equipments, orders)*>
+<!ELEMENT windows (people, adresses, products, equipments, orders)>
 <!--element windows jest ciałem dokumentu-->
 
 
 <!ELEMENT people (human)*>
 <!--element people chroni w sobie zbior elementów human-->
 
-<!ELEMENT human (fname, lname, companyname?, note?, emails+, phones+)>
+<!ELEMENT human (fname, lname, companyname?, note?, emails?, phones+)>
 <!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
 
 <!ELEMENT emails (email)+>
@@ -22,7 +22,7 @@
 
 
 <!ELEMENT adresses (adress)>
-<!ELEMENT adress (country, city, street, building, apt, zip)>
+<!ELEMENT adress (country, city, street, building, apt?, zip?)>
 <!--element adress jest zbiorem elemetów kraj, miasto, budynek, pokój, kod pocztowy -->
 <!ATTLIST adress adr_id ID #REQUIRED>
 <!--atrybut adr_id pozwala nam użuwać element adress prez referencje -->
@@ -53,9 +53,9 @@
 
 <!ELEMENT action (act_products, act_workers, act_client)+>
 <!--element action zawiera listę produktów używanych w zamówieniu, talże listę pracownikow wykonujących zamówienie i opcjonalne notatki-->
-<!ATTLIST action status (completed|uncompleted) 'uncompleted'
+<!ATTLIST action status (onhold|processing|completed|canceled) 'onhold'
 				 date-start (CDATA) #REQUIRED
-				 date-end (CDATA) #REQUIRED
+				 date-end (CDATA) #IMPLIED
 				 client IDREF #REQUIRED
 				 addres IDREF #REQUIRED>
 <!--atrybut status - wykonane/nie wykonane, atrybuty date-start date-end początek i koniec wykonania zamówienia, atrybuty client i adress referencje-->
@@ -68,7 +68,7 @@
 <!ELEMENT act_workers (act_worker)+>
 <!ELEMENT act_worker EMPTY>
 <!ATTLIST act_worker human IDREF #REQUIRED
-					 equipment IDREFS #REQUIRED>
+					 equipments IDREFS #REQUIRED>
 
 <!ELEMENT act_client (note)?>
 <!ELEMENT note (CDATA)>
