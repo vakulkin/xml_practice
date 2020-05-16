@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+	<!-- Węzeł główny -->
 	<xs:element name="windows" type="windowsType"/>
 	
+	<!-- Sekwencja nie powtarzających się elementów -->
 	<xs:complexType name="windowsType">
 		<xs:sequence>
 			<xs:element type="peopleType" name="people">				
@@ -38,30 +40,41 @@
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Typ ludzi -->
 	<xs:complexType name="peopleType">
 		<xs:sequence>
 			<xs:element type="humanType" name="human" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Jedna osoba -->
 	<xs:complexType name="humanType">
 		<xs:sequence>
 			<xs:element type="xs:string" name="fname"/>
 			<xs:element type="xs:string" name="lname"/>
+			
+			<!-- Może nie być jednego lub więcej pól poniżej -->
 			<xs:element type="xs:string" name="companyname" minOccurs="0"/>
 			<xs:element type="xs:string" name="note" minOccurs="0"/>
-			<xs:element type="emailsType" name="emails"/>
-			<xs:element type="phonesType" name="phones"/>
+			<xs:element type="emailsType" name="emails" minOccurs="0"/>
+			<xs:element type="phonesType" name="phones" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute type="xs:string" name="hum_id" use="required"/>
 		<xs:attribute name="type">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
+					<!-- Rodzaj osoby: klient lub pracownik -->
 					<xs:pattern value="client|worker"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
-		<xs:attribute type="xs:int" name="address" use="optional"/>
+		<xs:attribute name="address" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="a[0-9]+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 	
 	<xs:complexType name="emailsType">
@@ -178,8 +191,20 @@
 		</xs:attribute>
 		<xs:attribute type="xs:dateTime" name="date-start" use="required"/>
 		<xs:attribute type="xs:dateTime" name="date-end" use="optional"/>
-		<xs:attribute type="xs:string" name="client" use="required"/>
-		<xs:attribute type="xs:string" name="address" use="required"/>
+		<xs:attribute name="client" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="c[0-9]+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="address" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="a[0-9]+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 	
 	<xs:complexType name="act_productsType">
