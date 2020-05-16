@@ -99,7 +99,7 @@
 	<!-- Blok telefonów -->
 	<xs:complexType name="phonesType">
 		<xs:sequence>
-			<xs:element name="phone" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="phone" maxOccurs="unbounded">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<!-- Walidacja telefonu (11 cyfr)  -->
