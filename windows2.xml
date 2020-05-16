@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<windows>
+
+
+<people>
+	<human hum_id="h9" type="client" address="a9">
+		<fname>Brandon</fname>
+		<lname>Pickles</lname>
+		<companyname>BPCompany</companyname>
+		<note>Example note about klient</note>
+		<emails>
+			<email>Brandon.Pickles@gmail.com</email>
+		</emails>
+		<phones>
+			<phone>48635426982</phone>
+			<phone>48635426981</phone>
+		</phones>	
+	</human>
+	<human hum_id="h2" type="worker" >
+		<fname>Tom</fname>
+		<lname>Watez</lname>
+		<note>Example note about worker</note>
+		<emails>
+			<email>Tom.Watez@el.com</email>
+		</emails>
+		<phones>
+			<phone>48574433442</phone>
+		</phones>
+	</human>
+	<human hum_id="h4" type="worker" >
+		<fname>Adrian</fname>
+		<lname>Kasprzak</lname>	
+		<emails>
+			<email>Adriand.k@okna.com</email>
+		</emails>
+		<phones>
+			<phone>48325951465</phone>
+		</phones>	
+	</human>
+</people>
+
+<addresses>
+	<address adr_id="a9">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Banacha</street>
+		<building>22</building>
+		<apt>321</apt>
+		<zip>91-403</zip>
+	</address>
+	<address adr_id="a2">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Retkinia</street>
+		<building>32</building>
+		<apt>50</apt>
+	</address>
+	<address adr_id="a3">
+		<country>Poland</country>
+		<city>Lodz</city>
+		<street>Golebia</street>
+		<building>6</building>
+		<apt>55</apt>
+	</address>
+</addresses>
+
+<products>
+	<product pr_id="p10" type="product" price="300" code="W83H2" size="300x150">
+		Window 
+	</product>
+	<product pr_id="p11" type="product" price="560" code="W37H3" size="300x300">
+		Window 
+	</product>
+	<product pr_id="p23" type="product" price="658" code="W4421R" size="300x220">
+		Window 
+	</product>
+	<product pr_id="p13" type="product" price="15" code="C4421R">
+		Handle 
+	</product>
+	<product pr_id="p22" type="product" price="15" code="C4421R">
+		Handle 
+	</product>
+	<product pr_id="p4" type="service" price="500" code="AD444R">
+		Delivery
+	</product>
+	<product pr_id="p5" type="service" price="50" code="AD443S">
+		Window installation
+	</product>
+</products>
+
+<equipments>
+	<equipment eq_id="e1">Opel Omega EL332AR</equipment>
+	<equipment eq_id="e2">Drill Bosch</equipment>
+	<equipment eq_id="e3">ToolBox</equipment>
+	<equipment eq_id="e4">Hummer Cat</equipment>
+
+</equipments>
+
+<orders>
+	<order order_id="o9">
+		<action status="completed" date-start="2020-05-08T09:00:45Z" date-end="2020-05-08T09:50:21Z" client="h9" address="a9">
+			<act_products>
+				<act_product product="p10" num="8" sale="15" />
+				<act_product product="p11" num="10" />
+				<act_product product="p23" num="9" />
+				<act_product product="p13" num="19" />
+				<act_product product="p22" num="8" />
+				<act_product product="p4" num="1" />
+			</act_products>
+			<act_workers>
+				<act_worker human="h2" equipments="e1"/>
+			</act_workers>
+			<note>
+				comment
+			</note>
+		</action>
+
+		<action status="unhold" date-start="2020-06-08T08:30:23" date-end="" client="h9" address="a9">
+			<act_products>
+				<act_product product="p5" num="1" sale="20" />
+			</act_products>
+			<act_workers>
+				<act_worker human="h2" equipments="e1,e2"/>
+				<act_worker human="h4" equipments="e3,e4"/>
+			</act_workers>
+			<note>
+				comment
+			</note>
+		</action>
+	</order>
+</orders>
+
+</windows>
