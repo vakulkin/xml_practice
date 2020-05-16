@@ -20,9 +20,13 @@
 				</xs:unique>
 			</xs:element>
 			<xs:element type="productsType" name="products">
-				<xs:unique name="product_unique">
+				<xs:unique name="product_pr_id_unique">
 					<xs:selector xpath="./product"/>
 					<xs:field xpath="@pr_id"/>
+				</xs:unique>
+				<xs:unique name="product_code_unique">
+					<xs:selector xpath="./product"/>
+					<xs:field xpath="@code"/>
 				</xs:unique>
 			</xs:element>
 			<xs:element type="equipmentsType" name="equipments">
