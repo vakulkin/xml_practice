@@ -7,7 +7,7 @@
 <!ELEMENT people (human)*>
 <!--element people chroni w sobie zbior elementów human-->
 
-<!ELEMENT human (fname, lname, companyname?, note?, emails?, phones+)>
+<!ELEMENT human (fname, lname, companyname?, note?, emails?, phones)>
 <!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
 
 <!ELEMENT emails (email)+>
