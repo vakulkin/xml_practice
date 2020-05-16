@@ -213,7 +213,7 @@
 			<!-- Przypięte pracownicy -->
 			<xs:element type="act_workersType" name="act_workers"/>
 			<!-- Komentarze do akcji -->
-			<xs:element type="xs:string" name="note"/>
+			<xs:element type="xs:string" name="note" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="status">
 			<xs:simpleType>
