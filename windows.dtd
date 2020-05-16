@@ -59,7 +59,7 @@
 <!ATTLIST order order_id ID #REQUIRED>
 <!--atrybut order_id pozwala nam użuwać element order prez referencje-->
 
-<!ELEMENT action (act_products, act_workers, act_client)+>
+<!ELEMENT action (act_products, act_workers)>
 <!--element action zawiera listę produktów używanych w zamówieniu, talże listę pracownikow wykonujących zamówienie i opcjonalne notatki-->
 <!ATTLIST action status (onhold|processing|completed|canceled) 'onhold'
 				 date-start CDATA #REQUIRED
