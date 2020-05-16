@@ -58,6 +58,7 @@
 			<xs:element type="xs:string" name="companyname" minOccurs="0"/>
 			<xs:element type="xs:string" name="note" minOccurs="0"/>
 			<xs:element type="emailsType" name="emails" minOccurs="0"/>
+			
 			<xs:element type="phonesType" name="phones"/>
 		</xs:sequence>
 		<!--  ID człowieka -->
