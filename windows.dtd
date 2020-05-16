@@ -69,6 +69,7 @@
 <!--atrybut status - wykonane/nie wykonane, atrybuty date-start date-end początek i koniec wykonania zamówienia, atrybuty client i adress referencje-->
 
 <!ELEMENT act_products (act_product)+>
+<!ELEMENT act_product EMPTY>
 <!ATTLIST act_product id IDREF #REQUIRED
 					  num CDATA #REQUIRED
 					  sale CDATA #IMPLIED>
