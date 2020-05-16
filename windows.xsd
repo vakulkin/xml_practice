@@ -231,7 +231,7 @@
 		
 	<xs:complexType name="act_workersType">
 		<xs:sequence>
-			<xs:element type="act_workerType" name="act_worker"/>
+			<xs:element type="act_workerType" name="act_worker" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -255,7 +255,5 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	
-	
 	
 </xs:schema>
