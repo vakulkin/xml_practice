@@ -77,7 +77,7 @@
 <!ELEMENT act_workers (act_worker)+>
 <!ELEMENT act_worker EMPTY>
 <!ATTLIST act_worker human IDREF #REQUIRED
-					 equipments IDREFS #REQUIRED>
+					 equipments IDREFS #IMPLIED>
 
 <!ELEMENT act_client (note)?>
 <!ELEMENT note (#PCDATA)>
