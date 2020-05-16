@@ -10,11 +10,11 @@
 <!ELEMENT human (fname, lname, companyname?, note?, emails?, phones)>
 <!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
 
-<!ELEMENT fname (PCDATA)>
-<!ELEMENT lname (PCDATA)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
 <!ELEMENT companyname (PCADATA)>
 <!ELEMENT emails (email)>
-<!ELEMENT email (PCDATA)>
+<!ELEMENT email (#PCDATA)>
 <!ELEMENT phones (phone)+>
 <!ELEMENT phone (CDATA)>
 <!ATTLIST human
@@ -26,18 +26,18 @@
 
 <!ELEMENT adresses (adress)>
 <!ELEMENT adress (country, city, street, building, apt?, zip?)>
-<!ELEMENT country (PCDATA)>
-<!ELEMENT street (PCDATA)>
-<!ELEMENT building (PCDATA)>
-<!ELEMENT apt (PCDATA)>
-<!ELEMENT zip (PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT building (#PCDATA)>
+<!ELEMENT apt (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
 <!--element adress jest zbiorem elemetów kraj, miasto, budynek, pokój, kod pocztowy -->
 <!ATTLIST adress adr_id ID #REQUIRED>
 <!--atrybut adr_id pozwala nam użuwać element adress prez referencje -->
 
 
 <!ELEMENT products (prooduct)?>
-<!ELEMENT product (PCDATA)>
+<!ELEMENT product (#PCDATA)>
 <!--element product jest lańcuchem tekstowym i zawiera nazwe produktu -->
 <!ATTLIST product pr_id ID #REQUIRED
 				  type (product|service) 'product'
@@ -48,7 +48,7 @@
 
 <!ELEMENT equipments (equipment)*>
 <!--elemnt equipments jest listą rzeczywistych narzędzi-->
-<!ELEMENT equipment (PCDATA)>
+<!ELEMENT equipment (#PCDATA)>
 <!ATTLIST equipment eq_id ID #REQUIRED>
 <!--atrybut eq_id pozwala nam użuwać element equipment prez referencje-->
 
@@ -79,7 +79,7 @@
 					 equipments IDREFS #REQUIRED>
 
 <!ELEMENT act_client (note)?>
-<!ELEMENT note (PCDATA)>
+<!ELEMENT note (#PCDATA)>
 <!ATTLIST act_client human IDREF #REQUIRED>
 
-]> 
+]>
