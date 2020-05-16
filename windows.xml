@@ -4,7 +4,7 @@
 
 
 <people>
-	<human hum_id="h1" type="client" address="1">
+	<human hum_id="h1" type="client" address="a1">
 		<fname>Ellisha</fname>
 		<lname>Leon</lname>
 		<companyname>Ellisha Leon Company</companyname>
