@@ -4,8 +4,8 @@
 	<!-- Węzeł główny -->
 	<xs:element name="windows" type="windowsType"/>
 	
-	<!-- Sekwencja nie powtarzających się elementów -->
 	<xs:complexType name="windowsType">
+		<!-- Sekwencja nie powtarzających się elementów -->
 		<xs:sequence>
 			<xs:element type="peopleType" name="people">				
 				<xs:unique name="human_unique">
@@ -49,6 +49,7 @@
 	
 	<!-- Jedna osoba -->
 	<xs:complexType name="humanType">
+		<!-- Sekwencja pól człowieka -->
 		<xs:sequence>
 			<xs:element type="xs:string" name="fname"/>
 			<xs:element type="xs:string" name="lname"/>
@@ -59,6 +60,7 @@
 			<xs:element type="emailsType" name="emails" minOccurs="0"/>
 			<xs:element type="phonesType" name="phones" minOccurs="0"/>
 		</xs:sequence>
+		<!--  ID człowieka -->
 		<xs:attribute type="xs:string" name="hum_id" use="required"/>
 		<xs:attribute name="type">
 			<xs:simpleType>
@@ -68,20 +70,24 @@
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
+		<!-- Adres komunikacji z osobą (a nie miejsca wykonywania prac związanych z instalacją okien) -->
 		<xs:attribute name="address" use="optional">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
+					<!-- Walidacja adresu  -->
 					<xs:pattern value="a[0-9]+"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
 	
+	<!-- Blok poczty -->
 	<xs:complexType name="emailsType">
 		<xs:sequence>
 			<xs:element name="email" maxOccurs="unbounded" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
+						<!-- Walidacja emailu  -->
 						<xs:pattern value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
 					</xs:restriction>
 				</xs:simpleType>
@@ -89,11 +95,13 @@
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Blok telefonów -->
 	<xs:complexType name="phonesType">
 		<xs:sequence>
 			<xs:element name="phone" maxOccurs="unbounded" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
+						<!-- Walidacja telefonu (11 cyfr)  -->
 						<xs:pattern value="[0-9]{11}"/>
 					</xs:restriction>
 				</xs:simpleType>
@@ -101,43 +109,52 @@
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Blok adresów -->
 	<xs:complexType name="addressesType">
 		<xs:sequence>
 			<xs:element type="addressType" name="address" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Jeden adres -->
 	<xs:complexType name="addressType">
 		<xs:sequence>
 			<xs:element type="xs:string" name="country"/>
 			<xs:element type="xs:string" name="city"/>
 			<xs:element type="xs:string" name="street"/>
 			<xs:element type="xs:string" name="building"/>
+			<!-- Może nie być jednego lub więcej pól poniżej -->
 			<xs:element type="xs:string" name="apt" minOccurs="0"/>
 			<xs:element name="zip" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
+						<!-- Walidacja zip kodu  -->
 						<xs:pattern value="[0-9]{2}-[0-9]{3}"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
 		</xs:sequence>
+		<!--  ID adresy -->
 		<xs:attribute type="xs:string" name="adr_id" use="required"/>
 	</xs:complexType>
 	
+	<!-- Blok produktów -->
 	<xs:complexType name="productsType">
 		<xs:sequence>
 			<xs:element type="productType" name="product" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Jeden produkt -->
 	<xs:complexType name="productType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
+				<!--  ID produktu -->
 				<xs:attribute type="xs:string" name="pr_id" use="required"/>
 				<xs:attribute name="type">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
+							<!--  Typ produktu: produkt lub usługa -->
 							<xs:pattern value="product|service"/>
 						</xs:restriction>
 					</xs:simpleType>
@@ -149,42 +166,54 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	
+	<!-- Sekcja sprzętu -->
 	<xs:complexType name="equipmentsType">
 		<xs:sequence>
 			<xs:element type="equipmentType" name="equipment" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Jednostka sprzętowa -->
 	<xs:complexType name="equipmentType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
+				<!--  ID sprzętu -->
 				<xs:attribute type="xs:string" name="eq_id" use="required"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-		
+	
+	<!-- Blok zamówień -->
 	<xs:complexType name="ordersType">
 		<xs:sequence>
 			<xs:element type="orderType" name="order"/>
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Jedno zamówienie -->
 	<xs:complexType name="orderType">
 		<xs:sequence>
+			<!-- Każde zamówienie jest podzielone na akcje (dostawa i instalacja może być w różne dni lub nih może być kilka) -->
 			<xs:element type="actionType" name="action" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
+		<!--  ID zamówieni -->
 		<xs:attribute type="xs:string" name="order_id"/>
 	</xs:complexType>
 	
+	<!-- Jedno działanie -->
 	<xs:complexType name="actionType">
 		<xs:sequence>
+			<!-- Towary i usługi, które uczestniczą w akcji -->
 			<xs:element type="act_productsType" name="act_products"/>
+			<!-- Przypięte pracownicy -->
 			<xs:element type="act_workersType" name="act_workers"/>
+			<!-- Komentarze do akcji -->
 			<xs:element type="xs:string" name="note"/>
 		</xs:sequence>
 		<xs:attribute name="status">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
+					<!-- Stan działania: zawieszone, zakończone, zakończone, anulowane -->
 					<xs:pattern value="onhold|processing|completed|canceled"/>
 				</xs:restriction>
 			</xs:simpleType>
