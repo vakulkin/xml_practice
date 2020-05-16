@@ -110,6 +110,21 @@
 			</note>
 		</action>
 	</order>
+	<order order_id="o2">
+		<action status="processing" date-start="2020-03-06T08:30:32Z" client="h3" address="a3">
+			<act_products>
+				<act_product product="p1" num="3" sale="10" />
+				<act_product product="p4" num="1" />
+				<act_product product="p5" num="1" sale="5"/>
+			</act_products>
+			<act_workers>
+				<act_worker human="h2" equipments="e1,e2"/>
+			</act_workers>
+			<note>
+				comment about second order
+			</note>
+		</action>
+	</order>
 </orders>
 
 </windows>
