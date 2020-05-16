@@ -164,7 +164,7 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-				<xs:attribute type="xs:int" name="price" use="required"/>
+				<xs:attribute type="xs:double" name="price" use="required"/>
 				<xs:attribute type="xs:string" name="code" use="required"/>
 				<xs:attribute type="xs:string" name="size" use="optional"/>
 			</xs:extension>
@@ -267,7 +267,7 @@
 				<!-- Ilość towarow lub usług w akcji -->
 				<xs:attribute type="xs:int" name="num" use="required"/>
 				<!-- Zniżka na towarн lub usługш -->
-				<xs:attribute type="xs:int" name="sale" use="optional"/>
+				<xs:attribute type="xs:double" name="sale" use="optional"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
