@@ -41,9 +41,9 @@
 <!--element product jest lańcuchem tekstowym i zawiera nazwe produktu -->
 <!ATTLIST product pr_id ID #REQUIRED
 				  type (product|service) 'product'
-				  price (CDATA) #IMPLIED
+				  price CDATA #IMPLIED
 				  code CDATA #REQUIRED
-				  size (CDATA) #IMPLIED>
+				  size CDATA #IMPLIED>
 <!--atrybut pr_id pozwala nam użuwać element product prez referencje, atrybut type jes używany dla wyboru między produktem i usługa, price - cena produkta/usługi, code - jest kodem produkta/usługi, size - rozmiar w razie gdy produkte, jest okno-->
 
 <!ELEMENT equipments (equipment)*>
@@ -62,16 +62,16 @@
 <!ELEMENT action (act_products, act_workers, act_client)+>
 <!--element action zawiera listę produktów używanych w zamówieniu, talże listę pracownikow wykonujących zamówienie i opcjonalne notatki-->
 <!ATTLIST action status (onhold|processing|completed|canceled) 'onhold'
-				 date-start (CDATA) #REQUIRED
-				 date-end (CDATA) #IMPLIED
+				 date-start CDATA #REQUIRED
+				 date-end CDATA #IMPLIED
 				 client IDREF #REQUIRED
 				 addres IDREF #REQUIRED>
 <!--atrybut status - wykonane/nie wykonane, atrybuty date-start date-end początek i koniec wykonania zamówienia, atrybuty client i adress referencje-->
 
 <!ELEMENT act_products (act_product)*>
 <!ATTLIST act_product id IDREF #REQUIRED
-					  num (CDATA) #REQUIRED
-					  sale (CDATA) #IMPLIED>
+					  num CDATA #REQUIRED
+					  sale CDATA #IMPLIED>
 
 <!ELEMENT act_workers (act_worker)+>
 <!ELEMENT act_worker EMPTY>
