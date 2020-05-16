@@ -10,6 +10,8 @@
 <!ELEMENT human (fname, lname, companyname?, note?, emails?, phones)>
 <!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
 
+<!ELEMENT fname (CDATA)+>
+<!ELEMENT lname (CDATA)+>
 <!ELEMENT emails (email)+>
 <!ELEMENT email (CDATA)>
 <!ELEMENT phones (phone)+>
