@@ -10,12 +10,13 @@
 <!ELEMENT human (fname, lname, companyname?, note?, emails?, phones)>
 <!--element human ma w sobie informacje takie jak imie, nazwisko, nazwa kompanji, telefon i email-->
 
-<!ELEMENT fname (CDATA)+>
-<!ELEMENT lname (CDATA)+>
-<!ELEMENT emails (email)+>
-<!ELEMENT email (CDATA)>
+<!ELEMENT fname (PCDATA)>
+<!ELEMENT lname (PCDATA)>
+<!ELEMENT companyname (PCADATA)>
+<!ELEMENT emails (email)>
+<!ELEMENT email (PCDATA)>
 <!ELEMENT phones (phone)+>
-<!ELEMENT phone (#PCDATA)>
+<!ELEMENT phone (CDATA)>
 <!ATTLIST human
 				hum_id ID #REQUIRED
 				type (client|worker) 'client'
@@ -25,24 +26,29 @@
 
 <!ELEMENT adresses (adress)>
 <!ELEMENT adress (country, city, street, building, apt?, zip?)>
+<!ELEMENT country (PCDATA)>
+<!ELEMENT street (PCDATA)>
+<!ELEMENT building (PCDATA)>
+<!ELEMENT apt (PCDATA)>
+<!ELEMENT zip (PCDATA)>
 <!--element adress jest zbiorem elemetów kraj, miasto, budynek, pokój, kod pocztowy -->
 <!ATTLIST adress adr_id ID #REQUIRED>
 <!--atrybut adr_id pozwala nam użuwać element adress prez referencje -->
 
 
 <!ELEMENT products (prooduct)?>
-<!ELEMENT product (CDATA)>
+<!ELEMENT product (PCDATA)>
 <!--element product jest lańcuchem tekstowym i zawiera nazwe produktu -->
 <!ATTLIST product pr_id ID #REQUIRED
 				  type (product|service) 'product'
-				  price (PCDATA) #IMPLIED
+				  price (CDATA) #IMPLIED
 				  code CDATA #REQUIRED
-				  size (PCDATA) #IMPLIED>
+				  size (CDATA) #IMPLIED>
 <!--atrybut pr_id pozwala nam użuwać element product prez referencje, atrybut type jes używany dla wyboru między produktem i usługa, price - cena produkta/usługi, code - jest kodem produkta/usługi, size - rozmiar w razie gdy produkte, jest okno-->
 
 <!ELEMENT equipments (equipment)*>
 <!--elemnt equipments jest listą rzeczywistych narzędzi-->
-<!ELEMENT equipment (CDATA)>
+<!ELEMENT equipment (PCDATA)>
 <!ATTLIST equipment eq_id ID #REQUIRED>
 <!--atrybut eq_id pozwala nam użuwać element equipment prez referencje-->
 
@@ -64,8 +70,8 @@
 
 <!ELEMENT act_products (act_product)*>
 <!ATTLIST act_product id IDREF #REQUIRED
-					  num (PCDATA) #REQUIRED
-					  sale (PCDATA) #IMPLIED>
+					  num (CDATA) #REQUIRED
+					  sale (CDATA) #IMPLIED>
 
 <!ELEMENT act_workers (act_worker)+>
 <!ELEMENT act_worker EMPTY>
@@ -73,7 +79,7 @@
 					 equipments IDREFS #REQUIRED>
 
 <!ELEMENT act_client (note)?>
-<!ELEMENT note (CDATA)>
+<!ELEMENT note (PCDATA)>
 <!ATTLIST act_client human IDREF #REQUIRED>
 
 ]> 
